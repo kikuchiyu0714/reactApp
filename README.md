@@ -72,11 +72,11 @@ npm start
 ```
 ## 2. Install .NET SDK
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.403-macos-arm64-installer
-- Create a new project
+### Create a new project
 ```
 dotnet new webapi -o backend
 ```
-- CORS settings in Program.cs
+### CORS settings in Program.cs
 ```
 var builder = WebApplication.CreateBuilder(args);
 
