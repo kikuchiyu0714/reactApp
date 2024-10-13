@@ -7,20 +7,20 @@ https://nodejs.org/en
 node -v
 npm -v
 ```
-- Create React App
+### Create React App
 ```
 npx create-react-app frontend
 ```
-- Install Bulma
+### Install Bulma
 ```
 cd frontend
 npm install bulma
 ```
-- Add the following command in src/index.css
+### Add the following command in src/index.css
 ```
 import 'bulma/css/bulma.min.css';
 ```
-- Update src/App.js
+### Update src/App.js
 ```
 import React, { useEffect, useState } from 'react';
 
@@ -66,7 +66,7 @@ function App() {
 
 export default App;
 ```
-- Start React App
+### Start React App
 ```
 npm start
 ```
@@ -98,7 +98,7 @@ app.MapControllers();
 
 app.Run();
 ```
-- Create Controllers/ValuesController.cs
+### Create Controllers/ValuesController.cs
 ```
 using Microsoft.AspNetCore.Mvc;
 
@@ -114,12 +114,12 @@ public class ValuesController : ControllerBase
     }
 }
 ```
-- Start API
+### Start API
 ```
 cd backend
 dotnet run
 ```
-- Access API
+### Access API
 ```
 http://localhost:5225/api/values
 ```
