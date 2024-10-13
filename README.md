@@ -1,7 +1,7 @@
 # reactApp
 
 ## 1. Install node.js
-- Official site: https://nodejs.org/en
+https://nodejs.org/en
 - Version
 ```
 node -v
@@ -70,4 +70,78 @@ export default App;
 ```
 npm start
 ```
-## 2. install .net core
+## 2. Install .NET SDK
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.403-macos-arm64-installer
+- Create a new project
+```
+dotnet new webapi -o backend
+```
+- CORS settings in Program.cs
+```
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy => policy.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
+
+builder.Services.AddControllers();
+
+var app = builder.Build();
+
+app.UseCors("AllowReactApp");
+
+app.MapControllers();
+
+app.Run();
+```
+- Create Controllers/ValuesController.cs
+```
+using Microsoft.AspNetCore.Mvc;
+
+[ApiController]
+[Route("api/[controller]")]
+public class ValuesController : ControllerBase
+{
+    [HttpGet]
+    public IActionResult Get()
+    {
+        var values = new List<string> { "data1", "data2", "data3" };
+        return Ok(values);
+    }
+}
+```
+- Start API
+```
+cd backend
+dotnet run
+```
+- Access API
+```
+http://localhost:5225/api/values
+```
+
+## 3. Structure
+```
+reactApp/                # Root
+│
+├── frontend/              # React
+│   ├── node_modules/      # Packeages
+│   ├── public/            # Static file
+│   ├── src/               # Source code
+│   │   ├── App.js         # Main component
+│   │   └── index.css      # CSS
+│   └── package.json       # Dependencies
+│
+├── backend/               # C# REST API
+│   ├── Controllers/       # Controller
+│   │   └── ValuesController.cs
+│   ├── Program.cs         # Entry Point
+│   ├── backend.csproj     # Project file
+│   └── Properties/        # Settings
+│
+└── README.md              
+```
