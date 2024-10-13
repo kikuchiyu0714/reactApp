@@ -2,7 +2,7 @@
 
 ## 1. Install node.js
 https://nodejs.org/en
-- Version
+### Version check
 ```
 node -v
 npm -v
@@ -126,7 +126,7 @@ http://localhost:5225/api/values
 
 ## 3. Structure
 ```
-reactApp/                # Root
+reactApp/                  # Root
 │
 ├── frontend/              # React
 │   ├── node_modules/      # Packeages
