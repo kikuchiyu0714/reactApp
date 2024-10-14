@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-item img {
+  max-height: 35px !important;
+}
+.custom-bar {
+  background-color: #FFE08A !important; 
+}
+.navbar .navbar-item {
+  color: #FF5733 !important;
+}
+.container>.navbar .navbar-brand, .navbar>.container .navbar-brand {
+  margin-inline-start: 0px !important;
+}

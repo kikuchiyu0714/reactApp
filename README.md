@@ -1,4 +1,3 @@
-# reactApp
 
 ## 1. Install node.js
 https://nodejs.org/en
@@ -15,6 +14,10 @@ npx create-react-app frontend
 ```
 cd frontend
 npm install bulma
+```
+### Install react-router
+```
+npm install react-router-dom
 ```
 ### Add the following command in src/index.css
 ```
